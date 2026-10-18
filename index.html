@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BAKE AFTER 화양</title>
+<meta name="description" content="술 대신 갓 구운 빵으로 가는 2차. 건대입구 화양동 논알콜 나이트 베이커리와 입지 분석.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF7F1; --surface:#FFFFFF; --ink:#2A211B; --muted:#7A6E64; --line:#E8DFD3;
+  --crust:#C8692E; --crust-soft:#F6E3D3; --night:#1C2030; --night-ink:#F3ECE2; --night-muted:#A9A3B8;
+  --c1:#C8692E; --c2:#4F7AA0; --c3:#7F9150; --c4:#B9AFA4; --grid:#E8DFD3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16141A; --surface:#201D24; --ink:#EFE8DF; --muted:#A79E95; --line:#34303A;
+    --crust:#E08A4E; --crust-soft:#3A2A20; --night:#0F1118; --night-ink:#F3ECE2; --night-muted:#A9A3B8;
+    --c1:#E08A4E; --c2:#7FA8CC; --c3:#A7B97A; --c4:#6F6873; --grid:#34303A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16141A; --surface:#201D24; --ink:#EFE8DF; --muted:#A79E95; --line:#34303A;
+  --crust:#E08A4E; --crust-soft:#3A2A20; --night:#0F1118; --night-ink:#F3ECE2; --night-muted:#A9A3B8;
+  --c1:#E08A4E; --c2:#7FA8CC; --c3:#A7B97A; --c4:#6F6873; --grid:#34303A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-family:"Gowun Batang",serif;font-size:20px;letter-spacing:.04em;text-decoration:none}
+.logo b{color:var(--crust)}
+.nav nav{display:flex;gap:18px;font-size:14px;overflow-x:auto;white-space:nowrap}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.hero{background:var(--night);color:var(--night-ink);padding:96px 0 84px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(224,138,78,.55),rgba(224,138,78,0) 70%)}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--crust);font-weight:700}
+.hero h1{font-family:"Gowun Batang",serif;font-size:clamp(34px,6vw,62px);line-height:1.2;margin:14px 0 18px;max-width:760px}
+.hero p{color:var(--night-muted);max-width:620px;font-size:17px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{border:1px solid rgba(243,236,226,.25);border-radius:999px;padding:6px 14px;font-size:13px}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.sec-no{font-size:13px;color:var(--crust);font-weight:700;letter-spacing:.1em}
+h2{font-family:"Gowun Batang",serif;font-size:clamp(26px,4vw,38px);line-height:1.3;margin:8px 0 12px}
+h3{font-size:19px;margin:0 0 8px}
+.lead{color:var(--muted);max-width:720px;margin:0 0 32px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card.hl{border-color:var(--crust);box-shadow:0 0 0 1px var(--crust) inset}
+.kpi{font-size:38px;font-weight:900;line-height:1.1}
+.kpi small{font-size:15px;font-weight:500;color:var(--muted);margin-left:4px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--crust-soft);color:var(--crust)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.dong-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+ul.clean{list-style:none;padding:0;margin:0}
+ul.clean li{padding:7px 0;border-top:1px dashed var(--line);font-size:14px;display:flex;justify-content:space-between;gap:10px}
+ul.clean li:first-child{border-top:0}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 20px 12px;margin-top:16px}
+.chart h3{font-size:16px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin:4px 0 8px}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+.callout{border-left:3px solid var(--crust);padding:4px 0 4px 14px;margin:18px 0;color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:13px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 14px}
+.night{background:var(--night);color:var(--night-ink)}
+.night .lead,.night .muted{color:var(--night-muted)}
+.night .card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.night section,.night{border-bottom:0}
+.menu-cat{margin-top:34px}
+.menu-cat h3{display:flex;align-items:baseline;gap:10px}
+.menu-item{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.menu-item:last-child{border-bottom:0}
+.menu-item .nm{font-weight:700}
+.menu-item .ds{font-size:13px;color:var(--muted)}
+.menu-item .pr{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.badge{font-size:11px;font-weight:700;color:#fff;background:var(--crust);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.oven{border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:16px;text-align:center}
+.oven b{display:block;font-size:28px;color:var(--crust)}
+.plan{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:64px;gap:8px;margin-top:10px}
+.zone{border-radius:10px;padding:10px;font-size:13px;line-height:1.35;border:1px solid var(--line);background:var(--surface)}
+.zone b{display:block;font-size:14px}
+.z-oven{grid-column:1/4;grid-row:1/2;background:var(--crust-soft);border-color:var(--crust)}
+.z-bar{grid-column:4/7;grid-row:1/2}
+.z-lounge{grid-column:1/5;grid-row:2/4}
+.z-group{grid-column:5/7;grid-row:2/4}
+.z-door{grid-column:1/3;grid-row:4/5}
+.z-photo{grid-column:3/5;grid-row:4/5}
+.z-take{grid-column:5/7;grid-row:4/5}
+.hours td:first-child{font-weight:700}
+footer{padding:48px 0 64px;font-size:13px;color:var(--muted)}
+footer h3{font-size:15px;color:var(--ink)}
+footer li{margin:4px 0}
+@media (max-width:820px){
+  .g3,.g2{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr}
+  .nav nav{gap:14px;font-size:13px}
+  .hero{padding:72px 0 64px}
+  section{padding:56px 0}
+  .plan{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
+  .z-oven,.z-bar,.z-lounge,.z-group,.z-door,.z-photo,.z-take{grid-column:auto;grid-row:auto}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">BAKE <b>AFTER</b></a>
+    <nav>
+      <a href="#area">입지 분석</a>
+      <a href="#concept">컨셉</a>
+      <a href="#menu">메뉴</a>
+      <a href="#space">공간</a>
+      <a href="#visit">운영·방문</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Sober Night Bakery · 화양동</div>
+    <h1>오늘의 2차는<br>술 대신, 갓 구운 빵으로.</h1>
+    <p>건대입구 화양동에서 자정까지 오븐을 켜는 논알콜 나이트 베이커리. 마시는 밤 대신 머무는 밤을 위해 빵과 논알콜 페어링을 굽습니다.</p>
+    <div class="chips">
+      <span class="chip">알코올 0%</span>
+      <span class="chip">밤 오븐 19 · 21 · 23시</span>
+      <span class="chip">건대입구역 2·7호선</span>
+      <span class="chip">13:00 – 24:00</span>
+    </div>
+  </div>
+</div>
+
+<!-- 01 입지 분석 -->
+<section id="area">
+  <div class="wrap">
+    <div class="sec-no">01 · AREA REPORT</div>
+    <h2>왜 화양동인가: 상권 세 곳 비교</h2>
+    <p class="lead">입지 평가를 거쳐 좁힌 후보 세 곳(광진구 화양동, 동대문구 회기동, 성동구 송정동)을 서울 열린데이터광장 수치로 비교했습니다. 유동인구는 2026년 2분기 기준이고, 비교 기준은 서울 전체 행정동입니다.</p>
+
+    <div class="grid g3" id="dongCards"></div>
+
+    <div class="chart">
+      <h3>① 유동인구 중 20·30대 비중 (2026년 2분기)</h3>
+      <div id="chShare"></div>
+      <p class="note">서울 행정동 423곳 중 순위. 1위는 신촌동(63.6%)입니다. 서울 행정동 중앙값은 29.2%입니다.</p>
+    </div>
+
+    <div class="chart">
+      <h3>연령대별 유동인구 구성</h3>
+      <div class="legend" id="lgAge"></div>
+      <div id="chAge"></div>
+    </div>
+
+    <div class="chart">
+      <h3>20·30대 비중 추이 (2021년 1분기 ~ 2026년 2분기)</h3>
+      <div class="legend" id="lgTrend"></div>
+      <div id="chTrend"></div>
+      <p class="note">회기동은 5년간 46%에서 55%로 크게 올랐고, 화양동은 59~62%로 가장 높은 수준을 유지합니다. 회기동은 방학이 낀 1·3분기에 비중이 떨어집니다.</p>
+    </div>
+
+    <div class="chart">
+      <h3>② 시간대별 유동인구 비중</h3>
+      <div class="legend" id="lgTm"></div>
+      <div id="chTm"></div>
+      <p class="note">시간대마다 길이가 다릅니다(00–06시는 6시간, 21–24시는 3시간). 그래서 같은 시간대끼리 동네를 비교해 주세요.</p>
+    </div>
+    <p class="callout">화양동은 저녁 17–21시(17.5%)와 밤 21–24시(14.0%) 비중이 서울 평균(16.6%, 12.7%)보다 높습니다. 회기동은 점심 11–14시(13.2%)에 강하고, 송정동은 새벽·오전 비중이 높은 주거형 패턴입니다.</p>
+
+    <div class="chart">
+      <h3>요일별 유동인구 비중</h3>
+      <div class="legend" id="lgDay"></div>
+      <div id="chDay"></div>
+      <p class="note">세로축은 12.8~15.2% 구간만 확대했습니다. 균등 분포라면 요일별로 14.3%입니다.</p>
+    </div>
+    <p class="callout">화양동은 토요일(14.8%)이 가장 붐빕니다. 회기동은 토·일(13.3%, 13.1%)에 유동인구가 빠지는 전형적인 대학가 패턴입니다. 송정동은 요일 차이가 거의 없습니다.</p>
+
+    <h3 style="margin-top:40px">③ 강남 접근성 · 대중교통 · 대학가 인접</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th></th><th>화양동</th><th>회기동</th><th>송정동</th></tr></thead>
+        <tbody>
+          <tr><td>강남역까지 직선거리</td><td><b>6.4km</b></td><td>10.8km</td><td>6.9km</td></tr>
+          <tr><td>강남 방면 노선<br><span class="small muted">노선도 기준</span></td><td>2호선 강남·삼성 직결, 7호선 강남구청·논현 직결 (환승 0회)</td><td>경의중앙·1호선 → 왕십리·청량리 환승 (1회)</td><td>동 안에 역 없음. 7호선(어린이대공원)·2호선(성수)까지 걸어서 이동</td></tr>
+          <tr><td>동 중심에서 1.5km 내 역</td><td>건대입구(7) 347m · 건대입구(2) 491m · 어린이대공원(7) 539m</td><td>회기 715m · 외대앞 1,093m · 고려대(6) 1,387m</td><td>어린이대공원(7) 781m · 장한평(5) 1,124m · 성수(2) 1,239m</td></tr>
+          <tr><td>인접 대학 (대학 최근접역까지)</td><td>건국대 347m · 세종대 539m</td><td>경희대 715m · 한국외대 1,093m · 서울시립대 1,469m</td><td>세종대 781m · 건국대 1,244m · 한양대 2.1km</td></tr>
+          <tr><td>대표역 하루 승하차<br><span class="small muted">평일 / 주말 중앙값</span></td><td>건대입구 2호선 79,840 / 64,909<br>건대입구 7호선 32,806 / 21,484</td><td>회기(경의중앙) 62,529 / 40,508<br>외대앞 31,033 / 16,587</td><td>어린이대공원 41,029 / 23,447<br>성수 2호선 124,277 / 97,066</td></tr>
+          <tr><td>유동인구 총량 순위</td><td><b>서울 44위</b></td><td>209위</td><td>316위</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">직선거리는 행정동 중심점(OA-22160)과 강남역 2호선 좌표(OA-21232) 사이를 계산했습니다. 대학 위치는 열린데이터광장에 좌표 데이터가 없어서 대학 최근접역까지의 거리로 대신했습니다. 승하차는 2026.8.16~10.14 일별 데이터의 중앙값입니다.</p>
+
+    <div class="card hl" style="margin-top:24px">
+      <span class="tag">결론</span>
+      <h3 style="margin-top:10px">화양동: 20·30대 밀도 서울 2위, 밤에 강하고, 강남까지 환승 없이 갑니다</h3>
+      <p class="muted" style="margin:0">회기동은 20대가 많지만 주말과 방학에 유동이 빠지고, 강남 연결이 약합니다. 송정동은 요즘 뜨는 동네로 꼽히지만 20·30대 비중(42.4%)과 유동 총량이 셋 중 가장 낮습니다. 화양동은 임대료가 가장 비싸다는 리스크를 안고 있습니다. 그래서 이면 1층 코너 점포와 2만원대 객단가로 이를 상쇄합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 컨셉 -->
+<div class="night" id="concept">
+<section>
+  <div class="wrap">
+    <div class="sec-no">02 · CONCEPT</div>
+    <h2>마시는 밤에서, 머무는 밤으로</h2>
+    <p class="lead">밤 약속의 기본값은 오랫동안 술이었습니다. 지금 20대는 술 대신 대화와 디저트, 새로운 맛을 찾아 밤을 보냅니다(소버 큐리어스). 미국 조사에서는 Z세대의 65%가 2025년에 술을 줄이겠다고 답했습니다(NCSolutions). 건대입구에는 밤 수요가 있지만, 그 시간에 갈 곳은 대부분 술집입니다. BAKE AFTER는 그 자리를 '굽는 2차'로 채웁니다.</p>
+
+    <div class="grid g3">
+      <div class="card"><span class="tag">01</span><h3 style="margin-top:10px">알코올 0%, 취향 100%</h3><p class="muted small" style="margin:0">모든 음료가 논알콜입니다. 빵과 짝을 맞춘 스프리츠·티 칵테일로 '한 잔'의 즐거움은 남기고 취기는 뺍니다.</p></div>
+      <div class="card"><span class="tag">02</span><h3 style="margin-top:10px">밤에만 굽는 빵</h3><p class="muted small" style="margin:0">19·21·23시에 오븐을 엽니다. '밤 오븐' 메뉴는 그 시간에만 나와서, 늦게 와야 하는 이유가 됩니다.</p></div>
+      <div class="card"><span class="tag">03</span><h3 style="margin-top:10px">대화가 들리는 볼륨</h3><p class="muted small" style="margin:0">음악을 낮추고 촛불 조명을 씁니다. 2인석과 4인석을 섞어서, 커플과 친구 모임이 모두 편하게 앉을 수 있습니다.</p></div>
+    </div>
+
+    <div class="chart" style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)">
+      <h3>건대입구역 시간대별 하차 인원 (2·7호선 합산, 월 기준)</h3>
+      <div id="chOff"></div>
+      <p class="note" style="color:var(--night-muted)">2026년 7~9월 월별 하차 인원의 중앙값입니다(OA-12252). 하차는 18시에 정점을 찍고 23시까지 월 4만~13만 명이 이어집니다. 저녁 식사 뒤 2차 시간대가 곧 BAKE AFTER의 영업 피크입니다.</p>
+    </div>
+
+    <h3 style="margin-top:40px">누구를 위한 곳인가</h3>
+    <div class="grid g3" style="margin-top:12px">
+      <div class="card"><b>메인 · 20대 커플과 친구</b><p class="muted small" style="margin:6px 0 0">저녁을 먹고 술집 대신 갈 2차를 찾는 2~4인. 건국대·세종대 학생과 건대입구로 놀러 온 20대입니다(화양동 유동인구의 44.9%가 20대).</p></div>
+      <div class="card"><b>서브 · 퇴근 후 소버 모임</b><p class="muted small" style="margin:6px 0 0">20대 후반~30대 초반 직장인. 내일 출근 걱정 없이 늦게까지 이야기하고 싶은 소모임입니다. 강남에서 2호선·7호선으로 환승 없이 옵니다.</p></div>
+      <div class="card"><b>데이 · 공강 시간 학생</b><p class="muted small" style="margin:6px 0 0">13~18시 밝은 '데이 모드'. 1만원 이하 빵+커피 세트로 낮 매출을 받칩니다.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- 03 메뉴 -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-no">03 · MENU</div>
+    <h2>빵과 논알콜, 짝을 맞춘 메뉴</h2>
+    <p class="lead">상시 메뉴는 9가지로 줄였습니다. 같은 생지와 버터 베이스를 돌려 써서 폐기와 인력 부담을 낮춥니다. 가격은 2026년 오픈 계획 기준입니다.</p>
+
+    <div class="grid g2">
+      <div>
+        <div class="menu-cat">
+          <h3>Night Oven <span class="small muted">19 · 21 · 23시에만</span></h3>
+          <div class="menu-item"><div><div class="nm">밤 소금빵<span class="badge">SIGNATURE</span></div><div class="ds">21시 오븐. 겉은 바삭하고 버터가 아직 녹아 있을 때 냅니다</div></div><div class="pr">3,800</div></div>
+          <div class="menu-item"><div><div class="nm">브륄레 크루아상</div><div class="ds">테이블에서 설탕을 토치로 캐러멜라이즈합니다</div></div><div class="pr">7,500</div></div>
+          <div class="menu-item"><div><div class="nm">바질 치즈 포카치아</div><div class="ds">'안주' 자리를 대신하는 짭짤한 빵. 나눠 먹기 좋게 잘라 냅니다</div></div><div class="pr">6,500</div></div>
+        </div>
+        <div class="menu-cat">
+          <h3>All Day Bakery</h3>
+          <div class="menu-item"><div><div class="nm">브라운버터 크루아상</div><div class="ds">고소한 브라운버터를 접어 넣은 기본 크루아상</div></div><div class="pr">4,900</div></div>
+          <div class="menu-item"><div><div class="nm">흑임자 퀸아망</div><div class="ds">캐러멜 크러스트에 흑임자 크림</div></div><div class="pr">5,200</div></div>
+          <div class="menu-item"><div><div class="nm">애프터 플레이트 (2인)</div><div class="ds">빵 4종 + 버터 3종 + 시즌 딥. 나눠 먹는 2차의 중심 메뉴</div></div><div class="pr">19,000</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-cat">
+          <h3>Zero Proof <span class="small muted">알코올 0%</span></h3>
+          <div class="menu-item"><div><div class="nm">유자 진저 스프리츠</div><div class="ds">밤 소금빵과 페어링. 산미가 버터의 무게를 정리합니다</div></div><div class="pr">7,500</div></div>
+          <div class="menu-item"><div><div class="nm">콜드브루 토닉</div><div class="ds">브륄레 크루아상의 단맛에 쌉싸름함을 더합니다</div></div><div class="pr">6,500</div></div>
+          <div class="menu-item"><div><div class="nm">말차 크림 소다</div><div class="ds">흑임자 퀸아망과 고소함을 겹칩니다</div></div><div class="pr">7,000</div></div>
+          <div class="menu-item"><div><div class="nm">아메리카노 / 라떼</div><div class="ds">데이 모드의 기본 음료</div></div><div class="pr">4,500 / 5,000</div></div>
+        </div>
+        <div class="menu-cat">
+          <h3>Sets</h3>
+          <div class="menu-item"><div><div class="nm">데이 세트 <span class="small muted">13–18시</span></div><div class="ds">빵 1 + 아메리카노</div></div><div class="pr">8,900</div></div>
+          <div class="menu-item"><div><div class="nm">첫 2차 세트</div><div class="ds">빵 1 + 제로프루프 1</div></div><div class="pr">11,900</div></div>
+          <div class="menu-item"><div><div class="nm">커플 애프터 세트</div><div class="ds">애프터 플레이트 + 제로프루프 2</div></div><div class="pr">29,000</div></div>
+        </div>
+        <p class="note">학생증을 보여주면 평일 전 시간 10% 할인합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 공간 -->
+<section id="space">
+  <div class="wrap">
+    <div class="sec-no">04 · SPACE</div>
+    <h2>약 20평, 28석. 오븐이 보이는 밤의 거실</h2>
+    <p class="lead">건대입구역에서 도보 3분 안쪽, 화양동 이면 1층 코너 점포를 찾고 있습니다(계약 전). 2층은 밤에 지나가다 들어오는 손님이 찾기 어려워 제외했습니다.</p>
+    <div class="plan">
+      <div class="zone z-oven"><b>Oven Window</b>유리창 너머로 굽는 과정이 보이는 오픈 오븐</div>
+      <div class="zone z-bar"><b>오븐 바 · 6석</b>혼자 오거나 둘이 와서 갓 구운 빵을 바로 받는 자리</div>
+      <div class="zone z-lounge"><b>로우라이트 라운지 · 2인석 5개 (10석)</b>촛불 조명, 낮은 음악. 21시 이후 노트북 사용 자제</div>
+      <div class="zone z-group"><b>그룹 테이블 · 4인석 3개 (12석)</b>금·토 저녁 예약 가능</div>
+      <div class="zone z-door"><b>입구</b>코너 쪽 통창</div>
+      <div class="zone z-photo"><b>포토 월</b>'AFTER' 네온 사인</div>
+      <div class="zone z-take"><b>테이크아웃 카운터</b>밤 오븐 빵 포장</div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+      <div class="card"><h3>Day 모드 · 13–18시</h3><p class="muted small" style="margin:0">밝은 자연광 조명, 음악은 낮게. 공강 시간 학생과 동네 손님이 편하게 머무는 베이커리 카페입니다.</p></div>
+      <div class="card"><h3>Night 모드 · 18–24시</h3><p class="muted small" style="margin:0">조명을 낮추고 촛불을 켭니다. 오븐 타임마다 종을 울려 갓 나온 빵을 알립니다. 대화가 들리는 볼륨을 지킵니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 운영·방문 -->
+<div class="night" id="visit">
+<section>
+  <div class="wrap">
+    <div class="sec-no">05 · VISIT</div>
+    <h2>운영 안내</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>영업시간</h3>
+        <table class="hours">
+          <tr><td>일–목</td><td>13:00 – 24:00</td></tr>
+          <tr><td>금·토</td><td>13:00 – 01:00</td></tr>
+          <tr><td>휴무</td><td>매주 월요일</td></tr>
+        </table>
+        <p class="muted small">주문 마감은 영업 종료 30분 전입니다.</p>
+      </div>
+      <div class="card">
+        <h3>오시는 길</h3>
+        <p class="muted small" style="margin:0 0 8px">서울 광진구 화양동, 건대입구역 도보 3분 안쪽 (점포 확정 후 공개)</p>
+        <ul class="clean">
+          <li><span>건대입구역 2호선</span><span>강남역 직결</span></li>
+          <li><span>건대입구역 7호선</span><span>강남구청·논현 직결</span></li>
+          <li><span>어린이대공원역 7호선</span><span>세종대 방면</span></li>
+        </ul>
+      </div>
+    </div>
+    <h3 style="margin-top:36px">밤 오븐 타임</h3>
+    <div class="timeline">
+      <div class="oven"><b>19:00</b>바질 치즈 포카치아</div>
+      <div class="oven"><b>21:00</b>밤 소금빵</div>
+      <div class="oven"><b>23:00</b>주말 한정 드롭 · 인스타그램 공지</div>
+    </div>
+    <div class="grid g3" style="margin-top:28px">
+      <div class="card"><h3>Sober Social</h3><p class="muted small" style="margin:0">매월 둘째·넷째 목요일, 빵 4종 × 제로프루프 4종 페어링 클래스 (12명)</p></div>
+      <div class="card"><h3>예약</h3><p class="muted small" style="margin:0">4인 그룹석만 금·토 저녁 예약을 받습니다. 나머지 좌석은 현장 대기입니다.</p></div>
+      <div class="card"><h3>밤 오븐 알림</h3><p class="muted small" style="margin:0">오븐 시간과 수량을 인스타그램에 미리 올려서, 헛걸음하지 않게 합니다.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <h3>데이터 출처와 산출 방법</h3>
+    <ul>
+      <li>유동인구: 서울 열린데이터광장 OA-22178 「서울시 상권분석서비스(길단위인구-행정동)」 2021Q1~2026Q2. 비로그인 시트 미리보기에서 추출했습니다. 미리보기에는 일부 값의 끝자리가 생략되어 있어서, 성별·연령·시간대·요일 합계가 총합과 맞도록 복원했습니다. 세 동의 66개 분기 행은 모두 검증을 통과했고, 서울 순위는 연령 합계가 맞는 423개 동 기준입니다.</li>
+      <li>행정동 중심점·면적: OA-22160 「서울시 상권분석서비스(영역-행정동)」. 좌표는 EPSG:5181로 보고 WGS84로 변환했습니다.</li>
+      <li>역 좌표: OA-21232 「서울시 역사마스터 정보」 · 일별 승하차: OA-12914 · 시간대별 승하차: OA-12252.</li>
+      <li>노선별 환승 횟수와 컨셉 근거 문장(소버 큐리어스, NCSolutions 2025 미국 설문)은 열린데이터광장 밖의 자료입니다. 메뉴·가격·좌석은 오픈 계획안이며 실제 매장이 아닙니다.</li>
+    </ul>
+    <p>BAKE AFTER · 화양 — 창업 계획 페이지 (2026)</p>
+  </div>
+</footer>
+
+<script>
+const D={
+  "화양동":{c:"--c1",s:62.0,rank:2,r20:2,age:[8.9,44.9,17.1,10.5,8.6,10.0],tm:[26.6,19.7,11.0,11.2,17.5,14.0],day:[14.0,14.1,14.2,14.1,14.4,14.8,14.4],tot:9225881,rankTot:44,female:54.4,
+    trend:[58.9,59.5,59.4,60.5,59.7,60.7,60.6,61.4,60.2,61.4,60.5,61.2,59.9,61.5,60.4,61.8,60.3,61.8,61.2,62.6,60.7,62.0]},
+  "회기동":{c:"--c2",s:55.1,rank:5,r20:3,age:[14.3,44.3,10.8,9.4,8.5,12.7],tm:[24.0,21.1,13.2,12.4,16.7,12.6],day:[14.5,14.7,14.9,14.9,14.6,13.3,13.1],tot:4919824,rankTot:209,female:57.0,
+    trend:[45.9,47.0,47.0,49.4,48.8,50.3,50.9,53.1,52.0,53.8,51.2,54.1,50.0,53.5,51.2,54.4,50.7,54.1,52.5,55.2,52.1,55.1]},
+  "송정동":{c:"--c3",s:42.4,rank:40,r20:44,age:[9.3,22.1,20.3,15.8,13.5,19.0],tm:[29.3,22.1,11.0,10.6,14.2,12.8],day:[14.3,14.3,14.4,14.4,14.2,14.1,14.3],tot:3304143,rankTot:316,female:49.7,
+    trend:[40.5,41.0,40.8,40.6,40.7,40.7,40.8,41.3,40.4,40.9,40.5,40.8,40.1,41.1,39.3,41.3,40.8,42.3,41.4,41.5,41.2,42.4]},
+  "서울":{c:"--c4",s:32.9,age:[15.0,16.1,16.7,16.7,14.8,20.7],tm:[25.6,20.6,12.2,12.2,16.6,12.7],day:[14.3,14.3,14.4,14.4,14.3,14.2,14.2]}
+};
+const OFF=[15733,1276,0,0,10,3160,25366,45268,110440,81933,81303,72816,82655,86994,85944,92864,106500,136255,183810,129172,84765,76748,67752,41339];
+const Q=[];for(let y=21;y<=26;y++)for(let q=1;q<=4;q++){if(y===26&&q>2)break;Q.push(`${y}Q${q}`);}
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmt=n=>n.toLocaleString('ko-KR');
+const NS='http://www.w3.org/2000/svg';
+
+function legend(id,names){document.getElementById(id).innerHTML=names.map(n=>`<span><span class="dot" style="background:var(${D[n].c})"></span>${n==='서울'?'서울 전체':n}</span>`).join('');}
+
+// vertical grouped bars
+function grouped(id,cats,names,key,{min=0,max,unit='%',h=260}={}){
+  const W=640,H=h,pl=34,pr=8,pt=12,pb=28,iw=W-pl-pr,ih=H-pt-pb;
+  const gw=iw/cats.length,bw=Math.min(18,(gw-12)/names.length);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  for(let i=0;i<=4;i++){const v=min+(max-min)*i/4,y=pt+ih-ih*i/4;s+=`<line x1="${pl}" x2="${W-pr}" y1="${y}" y2="${y}" stroke="var(--grid)"/><text x="${pl-6}" y="${y+4}" font-size="11" text-anchor="end" fill="var(--muted)">${Math.round(v)}</text>`;}
+  cats.forEach((c,i)=>{const gx=pl+gw*i+(gw-bw*names.length)/2;
+    names.forEach((n,j)=>{const v=D[n][key][i],bh=ih*(v-min)/(max-min),x=gx+j*bw,y=pt+ih-bh;
+      s+=`<rect x="${x+1}" y="${y}" width="${bw-2}" height="${bh}" rx="3" fill="var(${D[n].c})"><title>${n} ${c}: ${v}${unit}</title></rect>`;});
+    s+=`<text x="${pl+gw*i+gw/2}" y="${H-8}" font-size="12" text-anchor="middle" fill="var(--muted)">${c}</text>`;});
+  document.getElementById(id).innerHTML=s+'</svg>';
+}
+// lines
+function lines(id,cats,names,key,{min,max,h=240,every=1,dec=1}={}){
+  const W=640,H=h,pl=34,pr=40,pt=12,pb=28,iw=W-pl-pr,ih=H-pt-pb;
+  const x=i=>pl+iw*i/(cats.length-1),y=v=>pt+ih-ih*(v-min)/(max-min);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  for(let i=0;i<=4;i++){const v=min+(max-min)*i/4;s+=`<line x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/><text x="${pl-6}" y="${y(v)+4}" font-size="11" text-anchor="end" fill="var(--muted)">${v.toFixed(dec)}</text>`;}
+  cats.forEach((c,i)=>{if((i%every===0&&(every===1||cats.length-1-i>=2))||i===cats.length-1)s+=`<text x="${x(i)}" y="${H-8}" font-size="11" text-anchor="middle" fill="var(--muted)">${c}</text>`;});
+  names.forEach(n=>{const vs=D[n][key];const p=vs.map((v,i)=>`${i?'L':'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join('');
+    s+=`<path d="${p}" fill="none" stroke="var(${D[n].c})" stroke-width="${n==='서울'?1.5:2.5}" ${n==='서울'?'stroke-dasharray="4 4"':''}/>`;
+    vs.forEach((v,i)=>{s+=`<circle cx="${x(i)}" cy="${y(v)}" r="${cats.length>10?2.2:3.5}" fill="var(${D[n].c})"><title>${n} ${cats[i]}: ${v}%</title></circle>`;});
+    const lv=vs[vs.length-1];s+=`<text x="${x(vs.length-1)+6}" y="${y(lv)+4}" font-size="11" fill="var(${D[n].c})" font-weight="700">${lv}</text>`;});
+  document.getElementById(id).innerHTML=s+'</svg>';
+}
+// horizontal share bars
+function share(){
+  const rows=[["화양동",62.0,"서울 2위"],["회기동",55.1,"서울 5위"],["송정동",42.4,"서울 40위"],["서울",32.9,"서울 전체"]];
+  const W=640,rh=40,H=rows.length*rh+8,pl=70,pr=90,iw=W-pl-pr;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  rows.forEach(([n,v,r],i)=>{const y=i*rh+6,w=iw*v/70;
+    s+=`<text x="${pl-10}" y="${y+20}" font-size="13" text-anchor="end" fill="var(--ink)">${n==='서울'?'서울 전체':n}</text><rect x="${pl}" y="${y+4}" width="${w}" height="24" rx="5" fill="var(${D[n].c})"/><text x="${pl+w+8}" y="${y+21}" font-size="13" font-weight="700" fill="var(--ink)">${v}%</text><text x="${W-4}" y="${y+21}" font-size="12" text-anchor="end" fill="var(--muted)">${r}</text>`;});
+  document.getElementById('chShare').innerHTML=s+'</svg>';
+}
+// stacked age
+function ageStack(){
+  const names=["화양동","회기동","송정동","서울"],labels=["10대","20대","30대","40대","50대","60대+"];
+  const op=[.35,1,.75,.5,.35,.22];
+  const W=640,rh=40,H=names.length*rh+8,pl=70,pr=8,iw=W-pl-pr;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  names.forEach((n,i)=>{let x=pl;const y=i*rh+6;
+    s+=`<text x="${pl-10}" y="${y+20}" font-size="13" text-anchor="end" fill="var(--ink)">${n==='서울'?'서울 전체':n}</text>`;
+    D[n].age.forEach((v,j)=>{const w=iw*v/100;s+=`<rect x="${x}" y="${y+4}" width="${w-1}" height="24" fill="var(${D[n].c})" fill-opacity="${op[j]}"><title>${n} ${labels[j]}: ${v}%</title></rect>`;
+      if(w>34)s+=`<text x="${x+w/2}" y="${y+21}" font-size="11" text-anchor="middle" fill="var(--ink)" font-weight="${j===1||j===2?700:400}">${v}</text>`;x+=w;});});
+  document.getElementById('chAge').innerHTML=s+'</svg>';
+  document.getElementById('lgAge').innerHTML=labels.map((l,j)=>`<span><span class="dot" style="background:var(--c1);opacity:${op[j]}"></span>${l}</span>`).join('')+'<span>· 진하게 표시한 값 = 20대·30대</span>';
+}
+function offChart(){
+  const W=640,H=230,pl=40,pr=8,pt=10,pb=26,iw=W-pl-pr,ih=H-pt-pb,max=200000,bw=iw/24;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img">`;
+  for(let i=0;i<=4;i++){const v=max*i/4,y=pt+ih-ih*i/4;s+=`<line x1="${pl}" x2="${W-pr}" y1="${y}" y2="${y}" stroke="rgba(255,255,255,.12)"/><text x="${pl-6}" y="${y+4}" font-size="11" text-anchor="end" fill="var(--night-muted)">${v/10000}만</text>`;}
+  OFF.forEach((v,h)=>{const bh=ih*v/max,x=pl+bw*h,y=pt+ih-bh,hot=h>=17&&h<=23;
+    s+=`<rect x="${x+2}" y="${y}" width="${bw-4}" height="${bh}" rx="2" fill="${hot?'var(--crust)':'rgba(243,236,226,.35)'}"><title>${h}시: ${fmt(v)}명</title></rect>`;
+    if(h%3===0)s+=`<text x="${x+bw/2}" y="${H-8}" font-size="11" text-anchor="middle" fill="var(--night-muted)">${h}시</text>`;});
+  s+=`<text x="${pl+bw*18+bw/2}" y="${pt+ih-ih*OFF[18]/max-6}" font-size="11" text-anchor="middle" fill="var(--crust)" font-weight="700">${fmt(OFF[18])}</text>`;
+  document.getElementById('chOff').innerHTML=s+'</svg>';
+}
+function cards(){
+  const meta={"화양동":["광진구","건국대·세종대 · 건대입구 2·7호선"],"회기동":["동대문구","경희대·외대·시립대 · 회기역 1호선·경의중앙"],"송정동":["성동구","'제2의 성수' · 동 안에 역 없음"]};
+  document.getElementById('dongCards').innerHTML=["화양동","회기동","송정동"].map(n=>`<div class="card ${n==='화양동'?'hl':''}">
+    <div class="dong-h"><b><span class="dot" style="background:var(${D[n].c})"></span>${meta[n][0]} ${n}</b>${n==='화양동'?'<span class="tag">선정</span>':''}</div>
+    <div class="kpi">${D[n].s}<small>% 20·30대</small></div>
+    <p class="muted small" style="margin:4px 0 12px">${meta[n][1]}</p>
+    <ul class="clean"><li><span>20·30대 비중 순위</span><b>${D[n].rank}위 / 423</b></li><li><span>분기 유동인구</span><b>${fmt(D[n].tot)}</b></li><li><span>유동 총량 순위</span><b>${D[n].rankTot}위</b></li><li><span>여성 비율</span><b>${D[n].female}%</b></li></ul></div>`).join('');
+}
+function render(){
+  cards();share();ageStack();
+  legend('lgTrend',["화양동","회기동","송정동"]);lines('chTrend',Q,["화양동","회기동","송정동"],'trend',{min:38,max:66,every:4,dec:0});
+  legend('lgTm',["화양동","회기동","송정동","서울"]);grouped('chTm',["00–06","06–11","11–14","14–17","17–21","21–24"],["화양동","회기동","송정동","서울"],'tm',{max:32});
+  legend('lgDay',["화양동","회기동","송정동","서울"]);lines('chDay',["월","화","수","목","금","토","일"],["화양동","회기동","송정동","서울"],'day',{min:12.8,max:15.2,dec:1});
+  offChart();
+}
+render();
+</script>
+</body>
+</html>
