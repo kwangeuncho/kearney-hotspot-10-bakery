@@ -123,8 +123,10 @@ footer li{margin:4px 0}
     <a class="logo" href="#top">BAKE <b>AFTER</b></a>
     <nav>
       <a href="#area">입지 분석</a>
+      <a href="#backtest">백테스트</a>
       <a href="#concept">컨셉</a>
       <a href="#menu">메뉴</a>
+      <a href="#risk">리스크</a>
       <a href="#space">공간</a>
       <a href="#visit">운영·방문</a>
     </nav>
@@ -213,11 +215,58 @@ footer li{margin:4px 0}
   </div>
 </section>
 
+<!-- 02 백테스트 -->
+<section id="backtest">
+  <div class="wrap">
+    <div class="sec-no">02 · BACKTEST</div>
+    <h2>이 지표라면 성수는 2021년에 이미 잡혔다</h2>
+    <p class="lead">같은 지표를 과거에 적용해 봤습니다. 2021년(1~4분기) 데이터만 보고 후보를 골랐다면, 그곳이 이후(2025년 3분기~2026년 2분기) 실제로 성장했는지 확인했습니다. 대상은 두 기간 모두 합계 검증을 통과한 서울 행정동 340곳입니다.</p>
+
+    <div class="grid g3">
+      <div class="card hl"><span class="tag">사례 · 성수동2가3동</span>
+        <div class="kpi" style="margin-top:10px">23<small>위 / 340 (2021년)</small></div>
+        <p class="muted small" style="margin:4px 0 12px">2021년 20·30대 비중 44.0%로, 서울 중앙값(29.9%)을 크게 넘었습니다</p>
+        <ul class="clean">
+          <li><span>강남역까지 직선거리</span><b>약 5.9km</b></li>
+          <li><span>강남 방면 노선</span><b>성수역 2호선 직결</b></li>
+          <li><span>이후 유동인구 증가</span><b>+14.0% (27위)</b></li>
+          <li><span>이후 20·30대 유동 증가</span><b>+19.8% (22위)</b></li>
+        </ul>
+      </div>
+      <div class="card"><span class="tag">사례 · 한강로동 (용리단길)</span>
+        <div class="kpi" style="margin-top:10px">29<small>위 / 340 (2021년)</small></div>
+        <p class="muted small" style="margin:4px 0 12px">2021년 20·30대 비중 41.9%, 강남역까지 약 6.3km</p>
+        <ul class="clean">
+          <li><span>이후 유동인구 증가</span><b>+14.4% (25위)</b></li>
+          <li><span>이후 20·30대 유동 증가</span><b>+21.7% (20위)</b></li>
+          <li><span>서울 행정동 평균</span><b>−4.8%</b></li>
+        </ul>
+      </div>
+      <div class="card"><span class="tag">지표 전체의 적중률</span>
+        <div class="kpi" style="margin-top:10px">76<small>%</small></div>
+        <p class="muted small" style="margin:4px 0 12px">2021년 20·30대 비중 상위 10% 동(34곳) 중 26곳이 이후 서울 중앙값보다 빠르게 성장했습니다. 무작위로 골랐다면 50%였을 비율입니다.</p>
+        <ul class="clean">
+          <li><span>상위 25% (85곳)</span><b>68% 적중</b></li>
+          <li><span>하위 25% (85곳)</span><b>36% 적중</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chart">
+      <h3>2021년 20·30대 비중 그룹별, 이후 유동인구 평균 증감률</h3>
+      <div id="chBt"></div>
+      <p class="note">비교 기간은 2021년 1~4분기 대비 2025년 3분기~2026년 2분기입니다. 서울 전체 유동인구가 줄어드는 가운데, 20·30대 밀도가 높았던 동만 유동인구를 지켰습니다.</p>
+    </div>
+    <p class="callout">화양동은 2021년 20·30대 비중 59.6%로 340곳 중 1위였고, 이후에도 유동인구가 +4.0% 늘었습니다(서울 평균 −4.8%). 성수2가3동이 2021년에 보였던 신호(20·30대 밀도 상위권, 강남 6km 안, 2호선 직결)를 화양동은 지금 더 강하게 갖고 있습니다.</p>
+    <p class="note">같은 성수동이라도 성수1가1·1가2·2가1동은 유동인구가 1~13% 줄었습니다. 회기동은 2021년 11위였지만 −11.9%였습니다. 그래서 20·30대 비중 하나만 쓰지 않고, 강남 직결과 야간·주말 패턴을 함께 봅니다. 재건축 입주처럼 상권과 무관한 인구 증가(예: 둔촌1동 +196%)는 이 지표로 설명되지 않습니다.</p>
+  </div>
+</section>
+
 <!-- 02 컨셉 -->
 <div class="night" id="concept">
 <section>
   <div class="wrap">
-    <div class="sec-no">02 · CONCEPT</div>
+    <div class="sec-no">03 · CONCEPT</div>
     <h2>마시는 밤에서, 머무는 밤으로</h2>
     <p class="lead">밤 약속의 기본값은 오랫동안 술이었습니다. 지금 20대는 술 대신 대화와 디저트, 새로운 맛을 찾아 밤을 보냅니다(소버 큐리어스). 미국 조사에서는 Z세대의 65%가 2025년에 술을 줄이겠다고 답했습니다(NCSolutions). 건대입구에는 밤 수요가 있지만, 그 시간에 갈 곳은 대부분 술집입니다. BAKE AFTER는 그 자리를 '굽는 2차'로 채웁니다.</p>
 
@@ -246,7 +295,7 @@ footer li{margin:4px 0}
 <!-- 03 메뉴 -->
 <section id="menu">
   <div class="wrap">
-    <div class="sec-no">03 · MENU</div>
+    <div class="sec-no">04 · MENU</div>
     <h2>빵과 논알콜, 짝을 맞춘 메뉴</h2>
     <p class="lead">상시 메뉴는 9가지로 줄였습니다. 같은 생지와 버터 베이스를 돌려 써서 폐기와 인력 부담을 낮춥니다. 가격은 2026년 오픈 계획 기준입니다.</p>
 
@@ -285,10 +334,40 @@ footer li{margin:4px 0}
   </div>
 </section>
 
+<!-- 05 리스크 -->
+<section id="risk">
+  <div class="wrap">
+    <div class="sec-no">05 · RISK</div>
+    <h2>이 추천이 틀릴 수 있는 이유: 건대는 '술의 거리'다</h2>
+    <p class="lead">화양동의 밤 유동인구는 강점인 동시에 가장 큰 리스크입니다. 건대입구 맛의거리·로데오는 서울 동부를 대표하는 먹자·유흥 골목입니다. 밤에 사람이 많다는 것이, 술 대신 빵을 먹을 사람이 많다는 뜻은 아닙니다.</p>
+
+    <div class="grid g2">
+      <div class="card"><span class="tag">리스크 1 · 수요의 정체</span><h3 style="margin-top:10px">밤 유동인구는 '술 마시러 온 사람'일 수 있다</h3>
+        <p class="muted small">21–24시 유동 비중 14.0%(서울 12.7%)와 18시 하차 정점은 대부분 술자리 수요로 보입니다. 이 중 논알콜 2차로 넘어올 비율은 아직 아무 데이터로도 확인되지 않았습니다. 소버 큐리어스 근거도 미국 설문입니다.</p>
+        <p class="small"><b>대응</b> · 오픈 전 3개월간 팝업이나 임시 매장으로 21시 이후 전환율을 먼저 측정합니다.</p></div>
+      <div class="card"><span class="tag">리스크 2 · 분위기 충돌</span><h3 style="margin-top:10px">취객, 소음, 늦은 밤의 거리 이미지</h3>
+        <p class="muted small">페르소나 평가에서 30대 직장인은 3.0점, 아이를 둔 30대는 2.0점을 줬습니다. "밤마다 시끄럽고 붐비는 동네"라는 이유였습니다. 술집 사이에 있으면 '조용한 2차' 약속이 지켜지기 어렵습니다.</p>
+        <p class="small"><b>대응</b> · 메인 골목에서 한 블록 떨어진 코너를 찾고, 입구와 조명, 음악 볼륨으로 술집과 선을 긋습니다.</p></div>
+      <div class="card"><span class="tag">리스크 3 · 먹자골목 가격</span><h3 style="margin-top:10px">권리금과 임대료는 술집 매출 기준으로 매겨져 있다</h3>
+        <p class="muted small">건대입구 점포 평균 권리금은 2억 423만원으로 5대 상권 중 최고라는 조사가 있습니다(조사 시점 미확인). 객단가 1~3만원의 베이커리가 술집과 같은 임대료를 내면 손익분기가 높아집니다.</p>
+        <p class="small"><b>대응</b> · 20평 이하 1층, 권리금 없는 이면 매물을 우선합니다. 손익분기 좌석 회전수(저녁~심야 3회전)를 계약 전에 계산합니다.</p></div>
+      <div class="card"><span class="tag">리스크 4 · 쉬운 모방</span><h3 style="margin-top:10px">술집이 논알콜 메뉴만 추가해도 겹친다</h3>
+        <p class="muted small">논알콜 칵테일과 토치 디저트는 주변 술집과 카페가 금방 따라 할 수 있습니다(차별성 평가 5.5점). 술집에서 논알콜 한 잔을 시키는 쪽이 더 편한 손님도 있습니다.</p>
+        <p class="small"><b>대응</b> · 따라 하기 어려운 것은 '밤에 굽는 빵'입니다. 밤 오븐 시간표와 페어링 레시피를 브랜드의 중심으로 둡니다.</p></div>
+      <div class="card"><span class="tag">리스크 5 · 지표의 한계</span><h3 style="margin-top:10px">20·30대가 많다고 다 뜨지는 않는다</h3>
+        <p class="muted small">회기동은 2021년 20·30대 비중 11위였지만 이후 유동인구가 11.9% 줄었습니다. 대학생이 많아도 소비력이 낮거나 방학에 빠지는 동네가 있습니다. 유동인구는 통신 데이터 기반 추정치이고, 이 페이지의 값 일부는 미리보기에서 끝자리를 복원한 값입니다.</p>
+        <p class="small"><b>대응</b> · 원본 CSV로 값을 대조하고, 카페 업종 추정매출(OA-22175)로 지불 의향을 추가로 확인합니다.</p></div>
+      <div class="card"><span class="tag">리스크 6 · 고객 쏠림</span><h3 style="margin-top:10px">20대 데이트 수요에만 기대는 구조</h3>
+        <p class="muted small">페르소나 점수가 20대(7.3·7.8점)와 30대(2.0·3.0점)로 크게 갈렸습니다. 유행이 바뀌거나 시험·방학 기간이 오면 매출이 한꺼번에 흔들릴 수 있습니다.</p>
+        <p class="small"><b>대응</b> · 낮 데이 모드와 테이크아웃 매출이 전체의 40% 이상 나오도록 설계합니다.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- 04 공간 -->
 <section id="space">
   <div class="wrap">
-    <div class="sec-no">04 · SPACE</div>
+    <div class="sec-no">06 · SPACE</div>
     <h2>약 20평, 28석. 오븐이 보이는 밤의 거실</h2>
     <p class="lead">건대입구역에서 도보 3분 안쪽, 화양동 이면 1층 코너 점포를 찾고 있습니다(계약 전). 2층은 밤에 지나가다 들어오는 손님이 찾기 어려워 제외했습니다.</p>
     <div class="plan">
@@ -311,7 +390,7 @@ footer li{margin:4px 0}
 <div class="night" id="visit">
 <section>
   <div class="wrap">
-    <div class="sec-no">05 · VISIT</div>
+    <div class="sec-no">07 · VISIT</div>
     <h2>운영 안내</h2>
     <div class="grid g2">
       <div class="card">
@@ -354,6 +433,7 @@ footer li{margin:4px 0}
     <ul>
       <li>유동인구: 서울 열린데이터광장 OA-22178 「서울시 상권분석서비스(길단위인구-행정동)」 2021Q1~2026Q2. 비로그인 시트 미리보기에서 추출했습니다. 미리보기에는 일부 값의 끝자리가 생략되어 있어서, 성별·연령·시간대·요일 합계가 총합과 맞도록 복원했습니다. 세 동의 66개 분기 행은 모두 검증을 통과했고, 서울 순위는 연령 합계가 맞는 423개 동 기준입니다.</li>
       <li>행정동 중심점·면적: OA-22160 「서울시 상권분석서비스(영역-행정동)」. 좌표는 EPSG:5181로 보고 WGS84로 변환했습니다.</li>
+      <li>백테스트: OA-22178의 2021년 1~4분기와 2025년 3분기~2026년 2분기 전체 행정동 데이터입니다. 두 기간 8개 분기 모두 합계 검증을 통과한 340개 동만 썼습니다(신촌동·연남동 등은 검증 실패로 빠졌습니다). 성수2가3동·한강로동의 강남역 거리는 OA-22160 중심점 기준 근사치입니다.</li>
       <li>역 좌표: OA-21232 「서울시 역사마스터 정보」 · 일별 승하차: OA-12914 · 시간대별 승하차: OA-12252.</li>
       <li>노선별 환승 횟수와 컨셉 근거 문장(소버 큐리어스, NCSolutions 2025 미국 설문)은 열린데이터광장 밖의 자료입니다. 메뉴·가격·좌석은 오픈 계획안이며 실제 매장이 아닙니다.</li>
     </ul>
@@ -449,7 +529,15 @@ function render(){
   legend('lgTrend',["화양동","회기동","송정동"]);lines('chTrend',Q,["화양동","회기동","송정동"],'trend',{min:38,max:66,every:4,dec:0});
   legend('lgTm',["화양동","회기동","송정동","서울"]);grouped('chTm',["00–06","06–11","11–14","14–17","17–21","21–24"],["화양동","회기동","송정동","서울"],'tm',{max:32});
   legend('lgDay',["화양동","회기동","송정동","서울"]);lines('chDay',["월","화","수","목","금","토","일"],["화양동","회기동","송정동","서울"],'day',{min:12.8,max:15.2,dec:1});
-  offChart();
+  offChart();btChart();
+}
+function btChart(){
+  const rows=[["상위 10% (34곳)",1.4,"--c1"],["상위 25% (85곳)",-0.9,"--c1"],["서울 평균 (340곳)",-4.8,"--c4"],["나머지 75% (255곳)",-6.1,"--c4"],["하위 25% (85곳)",-6.8,"--c4"]];
+  const W=640,rh=40,H=rows.length*rh+10,pl=150,pr=60,iw=W-pl-pr,min=-8,max=4,x=v=>pl+iw*(v-min)/(max-min);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img"><line x1="${x(0)}" x2="${x(0)}" y1="0" y2="${H}" stroke="var(--muted)" stroke-dasharray="3 3"/>`;
+  rows.forEach(([n,v,c],i)=>{const y=i*rh+8,x0=x(Math.min(0,v)),w=Math.abs(x(v)-x(0));
+    s+=`<text x="${pl-10}" y="${y+18}" font-size="13" text-anchor="end" fill="var(--ink)">${n}</text><rect x="${x0}" y="${y+2}" width="${w}" height="24" rx="4" fill="var(${c})"/><text x="${v>=0?x(v)+6:x(v)-6}" y="${y+19}" font-size="13" font-weight="700" text-anchor="${v>=0?'start':'end'}" fill="var(--ink)">${v>0?'+':''}${v}%</text>`;});
+  document.getElementById('chBt').innerHTML=s+'</svg>';
 }
 render();
 </script>
